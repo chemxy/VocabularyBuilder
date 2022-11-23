@@ -1,27 +1,30 @@
-import { View, Text, FlatList } from "react-native";
+import { useContext } from "react";
+import { Button, FlatList, Text, View } from "react-native";
+import { VocabularyContext } from "../store/vocabularys-store";
 
-export default function VocabularyListScreen() {
+export default function VocabularyListScreen({ navigation }) {
+    // const navigation = useNavigation();
+    const vocabularyContext = useContext(VocabularyContext);
 
-    const DATA = [
-        {
-            id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-            title: 'First Item',
-            meaning: "meaning 1"
-        },
-    ];
+    function addVocabulary() {
+        // vocabularyContext.addVocabulary(newvocab);
+        navigation.navigate('CreateVocabulary')
+    }
 
     return (
         <View>
+            <Button title="add" onPress={addVocabulary} />
+
             <FlatList
-                data={DATA}
+                data={vocabularyContext.vocabularies}
                 renderItem={itemData => {
                     return (
                         <View>
-                            <Text>{itemData.item.title}</Text>
+                            <Text>{itemData.item.name}</Text>
                         </View>
                     )
                 }}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item.name}
             />
         </View>
     );

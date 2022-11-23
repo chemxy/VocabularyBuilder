@@ -12,7 +12,9 @@ export default function App() {
   return (
     <VocabularyStoreProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+          animation: 'fade_from_bottom'
+        }}>
           <Stack.Screen name="VocabularyList" component={VocabularyListScreen} />
           <Stack.Screen name="CreateVocabulary" component={CreateVocabularyScreen} />
         </Stack.Navigator>
