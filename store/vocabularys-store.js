@@ -12,9 +12,8 @@ export default function VocabularyStoreProvider({ children }) {
 
     //return true if sucess, otherwise false
     function addVocabulary(newVocabulary) {
-        console.log("adding")
-        console.log(newVocabulary);
-        //TODO add checking for duplicates / unique ids
+        console.log("adding" + newVocabulary)
+        //TODO add validation for duplicates / empty ids
         setVocabularies((current) => [...current, newVocabulary]);
         return true;
     }
