@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Button, FlatList, Pressable, Text, View } from "react-native";
+import { Button, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
 import { VocabularyContext } from "../store/vocabularys-store";
 
 export default function VocabularyListScreen({ navigation }) {
@@ -20,7 +20,7 @@ export default function VocabularyListScreen({ navigation }) {
         }
 
         return (
-            <View>
+            <View style={styles.item}>
                 <Pressable onPress={navigateToDetail} >
                     <Text>{itemData.item.name}</Text>
                 </Pressable>
@@ -44,3 +44,14 @@ export default function VocabularyListScreen({ navigation }) {
         </View>
     );
 }
+
+
+const styles = StyleSheet.create({
+    item: {
+        height: 40,
+        margin: 5,
+        borderWidth: 1,
+        borderRadius: 15,
+        padding: 5,
+    }
+});
