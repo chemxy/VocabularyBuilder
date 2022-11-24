@@ -7,7 +7,6 @@ export default function VocabularyListScreen({ navigation }) {
     const vocabularyContext = useContext(VocabularyContext);
 
     function addVocabulary() {
-        // vocabularyContext.addVocabulary(newvocab);
         navigation.navigate('CreateVocabulary');
     }
 
