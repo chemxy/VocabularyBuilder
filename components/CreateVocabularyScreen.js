@@ -19,7 +19,6 @@ export default function CreateVocabularyScreen({ navigation }) {
 
     return (
         <View>
-            <Text>create vocabualry screen is working!</Text>
             <Text>Name</Text>
             <TextInput style={styles.input} value={name} onChangeText={setName} />
             <Text>Meaning</Text>

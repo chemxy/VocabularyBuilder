@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import CreateVocabularyScreen from './components/CreateVocabularyScreen';
+import VocabularyDetailScreen from './components/VocabularyDetailScreem';
 import VocabularyListScreen from './components/VocabularyListScreen';
 import VocabularyStoreProvider from './store/vocabularys-store';
 
@@ -17,6 +18,7 @@ export default function App() {
         }}>
           <Stack.Screen name="VocabularyList" component={VocabularyListScreen} />
           <Stack.Screen name="CreateVocabulary" component={CreateVocabularyScreen} />
+          <Stack.Screen name="VocabularyDetail" component={VocabularyDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </VocabularyStoreProvider>
