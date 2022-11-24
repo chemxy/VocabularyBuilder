@@ -20,11 +20,11 @@ export default function App() {
           <Stack.Screen name="VocabularyList" component={VocabularyListScreen} />
           <Stack.Screen name="CreateVocabulary" component={CreateVocabularyScreen} />
           <Stack.Screen name="VocabularyDetail" component={VocabularyDetailScreen}
-            options={{
-              headerRight: () => {
-                return <DeleteVocabularyIconButton />
-              }
-            }}
+          // options={{
+          //   headerRight: () => {
+          //     return <DeleteVocabularyIconButton />
+          //   }
+          // }}
           />
         </Stack.Navigator>
       </NavigationContainer>

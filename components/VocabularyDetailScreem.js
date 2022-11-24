@@ -1,17 +1,18 @@
 import { useLayoutEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import DeleteVocabularyIconButton from "./DeleteVocabularyIconButton";
 
 export default function VocabularyDetailScreen({ route, navigation }) {
 
     const { name, definition } = route.params;
 
-    // useLayoutEffect(() => {
-    //     navigation.setOptions = ({
-    //     headerRight: () => {
-    //         return <DeleteVocabularyIconButton />
-    //     }
-    // });
-    // }, [navigation])
+    useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <DeleteVocabularyIconButton />
+            },
+        });
+    }, [navigation]);
 
     return (
         <View>
