@@ -9,7 +9,7 @@ export default function VocabularyDetailScreen({ route, navigation }) {
     useLayoutEffect(() => {
         navigation.setOptions({
             headerRight: () => {
-                return <DeleteVocabularyIconButton />
+                return <DeleteVocabularyIconButton name={name} />
             },
         });
     }, [navigation]);

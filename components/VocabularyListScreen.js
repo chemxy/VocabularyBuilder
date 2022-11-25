@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Button, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
-import { VocabularyContext } from "../store/vocabularys-store";
+import { VocabularyStore } from "../store/vocabularys-store";
 
 export default function VocabularyListScreen({ navigation }) {
     // const navigation = useNavigation();
-    const vocabularyContext = useContext(VocabularyContext);
+    const vocabularyContext = useContext(VocabularyStore);
 
     function addVocabulary() {
         navigation.navigate('CreateVocabulary');

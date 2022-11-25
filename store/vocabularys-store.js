@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const VocabularyContext = createContext({
+export const VocabularyStore = createContext({
     vocabularies: [], // this is used to store all vocabularies
     addVocabulary: (newVocabulary) => { },
     removeVocabulary: (vocabularyId) => { }
@@ -12,7 +12,7 @@ export default function VocabularyStoreProvider({ children }) {
 
     //return true if sucess, otherwise false
     function addVocabulary(newVocabulary) {
-        console.log("adding" + newVocabulary)
+        console.log("adding: " + newVocabulary.name);
         //TODO add validation for duplicates / empty ids
         setVocabularies((current) => [...current, newVocabulary]);
         return true;
@@ -31,5 +31,5 @@ export default function VocabularyStoreProvider({ children }) {
         removeVocabulary: removeVocabulary
     }
 
-    return <VocabularyContext.Provider value={value}>{children}</VocabularyContext.Provider>
+    return <VocabularyStore.Provider value={value}>{children}</VocabularyStore.Provider>
 }

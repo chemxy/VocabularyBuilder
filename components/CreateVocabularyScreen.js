@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
-import { VocabularyContext } from "../store/vocabularys-store";
+import { VocabularyStore } from "../store/vocabularys-store";
 
 export default function CreateVocabularyScreen({ navigation }) {
 
-    const vocabularyContext = useContext(VocabularyContext);
+    const vocabularyContext = useContext(VocabularyStore);
     const [name, setName] = useState('');
     const [definition, setDefinition] = useState('');
 
